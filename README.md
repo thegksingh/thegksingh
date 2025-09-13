@@ -70,7 +70,7 @@
 
 ### ✨ Fun Touch  
 - 🔢 **Unique Profile Views:**  
-  ![Unique Visitors](https://visitor-badge-reloaded.vercel.app/badge?page_id=thegksingh.thegksingh&style=flat-square&color=blue)  
+  ![Profile Views](https://visitor-badge.laobi.icu/badge?page_id=thegksingh)  
 - 💬 **Random Dev Quote:**  
   ![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical)
 
