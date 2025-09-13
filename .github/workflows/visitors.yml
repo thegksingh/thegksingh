@@ -1,1 +1,30 @@
+name: Count Profile Visitors
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # runs daily at midnight UTC
+
+jobs:
+  update-visitors:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Count visitors
+        uses: laobubu/visitor-badge-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LABEL: "👀 Profile Views"
+          COLOR: "blue"
+          STYLE: "flat-square"
+          FILENAME: visitors.json
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add visitors.json
+          git commit -m "Update visitor count"
+          git push
